@@ -53,16 +53,6 @@
 
         }
 
-        /**
-        *
-        * Insert
-        *
-        * @param  STRING => $table
-        * @param  ARRAY  => $values
-        * @return PDO::STATEMENT => http://php.net/manual/pt_BR/class.pdostatement.php
-        *
-        */
-
         function Insert( $table, $values ) {
             
             $data = $this->Filter( $values, 'input' );
@@ -72,17 +62,6 @@
             return $this->Execute("INSERT INTO {$table} (`id`, {$keys}) VALUES (uuid(), {$values});");
 
         }
-
-        /**
-        *
-        * Update
-        *
-        * @param  STRING => $table
-        * @param  MIXED  => $where
-        * @param  ARRAY  => $values
-        * @return PDO::STATEMENT => http://php.net/manual/pt_BR/class.pdostatement.php
-        *
-        */
 
         function Update( $table, $where, $values ) {
 
@@ -94,16 +73,7 @@
 
         }
 
-        /**
-        *
-        * Delete
-        *
-        * @param  STRING => $table
-        * @param  STRING => $where
-        * @return PDO::STATEMENT => http://php.net/manual/pt_BR/class.pdostatement.php
-        *
-        */
-
+   
         function Delete( $table, $where ) {
 
             if( is_array( $where ) ) $where = $this->Serialize( $this->Filter( $where, 'input' ), 'and' );
@@ -111,15 +81,6 @@
             return $this->Execute("DELETE FROM {$table} WHERE {$where};");
 
         }
-
-        /**
-        *
-        * Execute
-        *
-        * @param  STRING => $sql
-        * @return PDO::STATEMENT => http://php.net/manual/pt_BR/class.pdostatement.php
-        *
-        */
 
         function Execute( $sql ) {
 
@@ -135,16 +96,7 @@
 
         }
 
-        /**
-        *
-        * Serialize
-        *
-        * @param  ARRAY  => $array
-        * @param  STRING => $contact
-        * @return STRING
-        *
-        */
-
+        
         function Serialize( $array, $concat, $only_values = false ) {
 
             return implode( " {$concat} ", array_map( function( $k, $v ) use ( $only_values ) {
@@ -156,16 +108,6 @@
 
         }
 
-        /**
-        *
-        * Filter
-        *
-        * @param  ARRAY $data
-        * @param  STRING $sep
-        * @param  STRING $type
-        * @return ARRAY
-        *
-        */
 
         function Filter( $data, $type ) {
 
@@ -199,23 +141,6 @@
     }
 
     class PDOStatement extends \PDOStatement {
-
-
-
-        /**
-        *
-        * Debug
-        *
-        * @param  EMPTY
-        * @return NULL
-        *
-        */
-
-        function Debug() {
-
-            ( new U\API )->Response( [ 'sql' => $this->queryString ] );
-
-        }
 
 
 

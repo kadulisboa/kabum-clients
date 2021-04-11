@@ -41,7 +41,9 @@
                 $this->dataRequest = $this->jsonUtils->processRequestBody();
             }
         
+            
             // $this->authorizedTokenRepository->validateToken($headers['Authorization']);
+
             $method = $this->request['method'];
 
             return $this->$method();;
