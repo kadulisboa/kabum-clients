@@ -4,10 +4,10 @@
 
     use \Utils as U;
 
-    class UsersRepository {
+    class ClientsRepository {
 
         private $pdo;
-        private const TABLE = "users";
+        private const TABLE = "clients";
         
         /**
          * Class constructor.
@@ -26,11 +26,7 @@
             return $this->pdo->Select(self::TABLE, "*", ["id" => $id])->fetch(\PDO::FETCH_ASSOC);
         }
 
-        public function verifyEmail($email){
-            return $this->pdo->Select(self::TABLE, "*", ["email" => $email])->fetch(\PDO::FETCH_ASSOC);
-        }
-
-        public function createUsers($bodyRquest){
+        public function createClients($bodyRquest){
 
             $return = $this->pdo->Insert(self::TABLE, $bodyRquest);
             $error = $this->pdo->errorInfo();
@@ -42,7 +38,7 @@
             return $return;
         }
 
-        public function deleteUser($id){
+        public function deleteClients($id){
             $return = $this->pdo->Delete(self::TABLE, [ "id" => $id ]);
             $error = $this->pdo->errorInfo();
             if($error[0] != "00000") {
@@ -52,7 +48,7 @@
             return [ "message" => U\ConstantsUtils::MSG_DEL_SUCCESS[0] ];
         }
 
-        public function editUsers($bodyRquest, $id)
+        public function editClients($bodyRquest, $id)
         {
             if($id == NULL) {
                 $where = 1;

@@ -8,10 +8,10 @@
             $urls = self::getUrls();
 
             $request['route'] = strtolower($urls[0]);
-            $request['recourse'] = $urls[1] ? $urls[1] : null;
-            $request['id'] = $urls[2] ? $urls[2] : null;
+            $request['id'] = $urls[1] ? $urls[1] : null;
             $request['method'] = $_SERVER['REQUEST_METHOD'];
-
+            // $request['recourse'] = $urls[1] ? $urls[1] : null;
+            
             return $request;
 
         }

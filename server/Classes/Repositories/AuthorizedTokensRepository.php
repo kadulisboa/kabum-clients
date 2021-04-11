@@ -58,4 +58,10 @@
 
         }
 
+        public function getTokens($id) {
+
+            $this->pdo->Select(TABLE, "*" ,"status = 1");
+
+        }
+
     }

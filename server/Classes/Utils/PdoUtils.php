@@ -64,11 +64,10 @@
         */
 
         function Insert( $table, $values ) {
-
+            
             $data = $this->Filter( $values, 'input' );
-
-            $keys   = implode(',', array_keys( $data ) );
-            $values = $this->Serialize( $data, ',', true );
+            $keys   = implode(',', array_keys( (array) $data ) );
+            $values = $this->Serialize( (array) $data, ',', true );
 
             return $this->Execute("INSERT INTO {$table} (`id`, {$keys}) VALUES (uuid(), {$values});");
 
@@ -171,13 +170,14 @@
         function Filter( $data, $type ) {
 
             switch ( $type ) {
-
+                
                 case 'input':
-
+                    
                     foreach( $data as $k => &$v ) {
                         
-                        if( strpos( $k, 'birthday' ) !== false )    $v = date_format( date_create( str_replace( '/', '-', $v ) ), 'Y-m-d' );
-
+                        if( strpos( $k, 'birthday' ) !== false )   $v = date_format( date_create( str_replace( '/', '-', $v ) ), 'Y-m-d' );
+                        if( strpos( $k, 'address' ) !== false )    $v = json_encode($v);
+                        
                     }
 
                     break;

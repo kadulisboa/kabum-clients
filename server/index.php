@@ -11,6 +11,9 @@
 
         $return = $requestValidator->processRequest();
 
+        $jsonUtil = new U\JsonUtils();
+        $jsonUtil->processArray($return);
+
     }catch(Exception $exception){
         echo json_encode([
             U\ConstantsUtils::TYPE => U\ConstantsUtils::TYPE_ERROR,

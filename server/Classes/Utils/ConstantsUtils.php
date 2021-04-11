@@ -19,7 +19,8 @@
         public const TYPE_POST = [
             "users",
             "clients",
-            "tokens"
+            "tokens",
+            "login"
         ];
         
         public const TYPE_DELETE = [
@@ -34,6 +35,7 @@
             "tokens"
         ];
 
+        public const CODE_PASS = "KABUM";
         public const MSG_ERROR_ROUTE = ["Rota não permitida."];
         public const MSG_ERROR_RECOURSE_NOT_FOUND = ["Recurso Inexistente."];
         public const MSG_ERROR_GENERIC = ["Erro desconhecido."];
@@ -48,7 +50,7 @@
         
         public const MSG_ERROR_ID_REQUIRED = ["ID Obrigatório."];
         public const MSG_ERROR_LOGIN_EXISTS = ["Login já existente."];
-        public const MSG_ERROR_LOGIN_PASS = ["Login e senha são obrigatórios."];
+        public const MSG_ERROR_LOGIN_PASS = ["Login e senha são obrigatórios.", "Senha ou E-mail incorreto."];
 
         const TYPE_SUCCESS = "success";
         const TYPE_ERROR = "error";
