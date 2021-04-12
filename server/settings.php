@@ -12,6 +12,11 @@
     session_start();
     setlocale(LC_TIME, 'pt_BR.utf-8');
     date_default_timezone_set('America/Sao_Paulo');
+    
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
+
+    header("Cache-Control: no-cache, must-revalidate");
 
     define('ENV', preg_match('/localhost|local.host|192\.168/', $_SERVER['SERVER_NAME']) != true ?: false);
 

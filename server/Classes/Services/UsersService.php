@@ -100,6 +100,7 @@
             
             if($pass) {
                 $return = [];
+                $return['id'] = $existentEmail['id'];
                 $return['name'] = $existentEmail['name'];
                 $return['email'] = $existentEmail['email'];
                 $return['cookie_name'] = "kabum_clients_logged";

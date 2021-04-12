@@ -1,0 +1,91 @@
+#page-login {
+
+    background: #f57a21;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#page-login .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#page-login .logo img{
+    width: 50%;
+    height: auto;
+}
+
+
+#page-login .logo h2{
+    font-size: 50px;
+    color: white;
+    margin-top: 0;
+}
+
+#page-login form{
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 30%;
+    margin-top: 20px;
+}
+
+@media (max-width: 414px) {
+    #page-login form{
+        width: 90%;
+    }
+}
+
+#page-login form label{
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+}
+#page-login form p{
+    color: #777;
+    opacity: 0.5;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#page-login form label input{
+    width: 100%;
+    background: #ccc;
+    color: #777;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+#page-login form label legend{
+    font-size: 20px;
+    font-weight: bold;
+    color: #777;
+}
+
+#page-login form button{
+    border: none;
+    width: 30%;
+    background: #bf5407;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+}
+#page-login form button b{
+    margin-right: 5px;
+}
+
